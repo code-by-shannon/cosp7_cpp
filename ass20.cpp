@@ -22,3 +22,5 @@ int main()
     cout << "This was the speed you entered and it was in range: " << checked_speed;
     return 0;
 }
+
+nothing burger
