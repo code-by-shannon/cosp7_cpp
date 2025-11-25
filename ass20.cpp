@@ -9,7 +9,7 @@ int speed_limit_range_check(){
     cin >> speed;
 
     while(speed < 20 || speed > 70){
-        cout << "Please enter a speed limit between 20 and 70" << endl;
+        cout << "Please enter a speed limit between 20mph and 70mph" << endl;
         cin >> speed;
     }
 
@@ -26,10 +26,15 @@ int car_speed(){
 int main()
 {
     int checked_speed = speed_limit_range_check();
-    cout << "This is the speed limit you entered: " << checked_speed << endl;
+    cout << "This is the speed limit you entered: " << checked_speed << " mph" << endl;
 
     int checked_car_speed = car_speed();
-    cout << "This was the car speed " << checked_car_speed << endl;
+    cout << "This was the car speed " << checked_car_speed << " mph" << endl;
+
+    if(checked_car_speed > checked_speed){
+        int mph_over_speed_limit = (checked_car_speed - checked_speed);
+        cout << "You were driving " << mph_over_speed_limit << "mph over the speed limit!" << endl;
+    }
     return 0;
 }
 
