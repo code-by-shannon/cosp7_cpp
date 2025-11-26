@@ -29,6 +29,7 @@ string enter_number_prompt[20] = {"Number 1: ",
 
 double total = 0;
 
+
 int main()
 {
     for (int i = 0; i < 20; i++){
@@ -37,9 +38,25 @@ int main()
       total += users_random_numbers[i];
     }
 
+    double lowest = users_random_numbers[0];
+    for (int i = 1; i < 20; i++){
+        if (users_random_numbers[i] < lowest){
+            lowest = users_random_numbers[i];
+        } ;
+    }
+
+     double highest = users_random_numbers[0];
+    for (int i = 1; i < 20; i++){
+        if (users_random_numbers[i] > highest){
+            highest = users_random_numbers[i];
+        } ;
+    }
+
     cout << fixed << setprecision(2);
     cout << "Total value of added numbers: " << total << endl;
     cout << "Average of added numbers: " << total/20 << endl;
+    cout << "Lowest value the user entered is: " << lowest << endl;
+    cout << "Highest value the user entered is: " << highest << endl;
 
     return 0;
 }
