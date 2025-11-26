@@ -2,22 +2,44 @@
 #include <iomanip>
 using namespace std;
 
-double cash_sales_values[7];
+double users_random_numbers[20];
 
-string days_of_the_week[7] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+string enter_number_prompt[20] = {"Number 1: ", 
+                              "Number 2:", 
+                              "Number 3:", 
+                              "Number 4:", 
+                              "Number 5:", 
+                              "Number 6: ", 
+                              "Number 7:", 
+                              "Number 8:", 
+                              "Number 9:", 
+                              "Number 10:", 
+                              "Number 11: ", 
+                              "Number 12:", 
+                              "Number 13:", 
+                              "Number 14:", 
+                              "Number 15:", 
+                              "Number 16: ", 
+                              "Number 17:", 
+                              "Number 18:", 
+                              "Number 19:", 
+                              "Number 20:"
+                            };
+                           
 
 double total = 0;
 
 int main()
 {
-    for (int i = 0; i < 7; i++){
-      cout << "Please enter cash total for " << days_of_the_week[i] << ": " << endl;
-      cin >> cash_sales_values[i];
-      total += cash_sales_values[i];
+    for (int i = 0; i < 20; i++){
+      cout << "Please enter a random number: " << enter_number_prompt[i] << endl;
+      cin >> users_random_numbers[i];
+      total += users_random_numbers[i];
     }
 
     cout << fixed << setprecision(2);
-    cout << "Week cash sales total: $" << total << endl;
+    cout << "Total value of added numbers: " << total << endl;
+    cout << "Average of added numbers: " << total/20 << endl;
 
     return 0;
 }
