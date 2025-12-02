@@ -9,16 +9,34 @@ using namespace std;
 
 int main()
 {   
-    ifstream infile("numbers.dat");
+    
+    int sales_person_id, current_sales_person_id;
+    double sales, personal_total = 0, grand_total = 0;
 
-    int num;
-    int total = 0;
+    ifstream infile("sales.txt");
 
-    while (infile >> num) {
-        total += num;
-    }
+    infile >> current_sales_person_id >> sales;
+    personal_total = sales;
 
-    cout << "Total of all values in numbers file: " << total << endl;
+
+    
+    
+    while (infile >> sales_person_id >> sales) {
+        if (current_sales_person_id == sales_person_id){
+        personal_total += sales;
+    } else {
+        cout << "Salesperson " << current_sales_person_id << " total: " << personal_total << endl;
+        
+        grand_total += personal_total;
+        current_sales_person_id = sales_person_id;
+
+        personal_total = sales;
+    }}
+
+    cout << "Total sales for this salesperson: " << current_sales_person_id << " total: " << personal_total << endl;
+    grand_total += personal_total;
+
+    cout << "Total of all sales: " << grand_total << endl;
 
 
     return 0;
